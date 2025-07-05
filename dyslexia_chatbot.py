@@ -2,14 +2,12 @@ import speech_recognition as sr
 import pyttsx3
 from transformers import BlenderbotTokenizer, BlenderbotForConditionalGeneration
 
-# Load Hugging Face model (Facebook Blenderbot)
 model_name = "facebook/blenderbot-400M-distill"
 tokenizer = BlenderbotTokenizer.from_pretrained(model_name)
 model = BlenderbotForConditionalGeneration.from_pretrained(model_name)
 
-# Initialize text-to-speech
 engine = pyttsx3.init()
-engine.setProperty('rate', 150)  # Adjust speech speed
+engine.setProperty('rate', 150)
 
 def speak_text(text):
     """Convert text to speech."""
